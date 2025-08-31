@@ -1,0 +1,130 @@
+@using Law_Firm.ViewMOdel
+@model ContactViewMOdel
+
+@{
+    ViewData["Title"] = localizer["Home"];
+}
+
+<!-- Hero Section -->
+<section id="home" class="hero-section section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="hero-content">
+                    <h1 class="display-3">@localizer["WelcomeToOurFirm"]</h1>
+                    <p class="lead">@localizer["ExpertLegalSolutions"]</p>
+                    <a href="#contact" class="btn btn-primary btn-hero">@localizer["ContactUs"]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section-padding section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title">@localizer["AboutFirmDescription"]</h2>
+                <img src="~/Img/shap-center.png" alt="Separator" class="mb-4">
+                <p class="lead"><strong>@localizer["FirmName"]</strong> @localizer["AboutFirmExpertise"]</p>
+                <a href="#contact" class="btn btn-primary mt-3">@localizer["LearnMore"]</a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="image-frame">
+                    <img src="~/Img/s_a.png" class="img-fluid" alt="@localizer["FirmName"]">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="section-padding section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">@localizer["PracticeAreas"]</h2>
+            <p class="section-subtitle">@localizer["PracticeAreasSubtitle"]</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <img src="~/Img/service1.png" alt="Criminal Law Icon" class="service-icon">
+                    <h4>@localizer["CriminalLaw"]</h4>
+                    <p>@localizer["CriminalLawDesc"]</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <img src="~/Img/service2.png" alt="Property Law Icon" class="service-icon">
+                    <h4>@localizer["PropertyLaw"]</h4>
+                    <p>@localizer["PropertyLawDesc"]</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <img src="~/Img/service3.png" alt="Personal Injury Icon" class="service-icon">
+                    <h4>@localizer["PersonalInjury"]</h4>
+                    <p>@localizer["PersonalInjuryDesc"]</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <img src="~/Img/service4.png" alt="Commercial Law Icon" class="service-icon">
+                    <h4>@localizer["CommercialLaw"]</h4>
+                    <p>@localizer["CommercialLawDesc"]</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <img src="~/Img/service5.png" alt="Family Law Icon" class="service-icon">
+                    <h4>@localizer["FamilyLaw"]</h4>
+                    <p>@localizer["FamilyLawDesc"]</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <img src="~/Img/service6.png" alt="Drug Offence Icon" class="service-icon">
+                    <h4>@localizer["DrugOffence"]</h4>
+                    <p>@localizer["DrugOffenceDesc"]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section-padding section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">@localizer["ContactUs"]</h2>
+            <p class="section-subtitle">@localizer["ContactUsSubtitle"]</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="contact-form">
+                    <h4 class="mb-4">@localizer["SendUsAMessage"]</h4>
+                    <form asp-action="Index" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">@localizer["FullName"]</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">@localizer["EmailAddress"]</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Message" class="form-label">@localizer["Message"]</label>
+                            <textarea asp-for="Message" class="form-control" rows="5"></textarea>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+                        <button type="submit" asp-action="Create" asp-controller="Contact" class="btn btn-primary">@localizer["SendMessage"]</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

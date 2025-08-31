@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FirmName" xml:space="preserve">
+    <value>Emad Naguib Law Firm</value>
+  </data>
+  <data name="ExpertLegalSolutions" xml:space="preserve">
+    <value>Expert Legal Solutions</value>
+  </data>
+  <data name="WelcomeToOurFirm" xml:space="preserve">
+    <value>Welcome to Our Firm</value>
+  </data>
+  <data name="AboutFirmDescription" xml:space="preserve">
+    <value>Emad Naguib Law Firm is committed to delivering professional and reliable legal services.</value>
+  </data>
+  <data name="AboutFirmExpertise" xml:space="preserve">
+    <value>With extensive experience in civil, commercial, and criminal law, we provide our clients with guidance rooted in integrity, expertise, and effective strategies. Our mission is simple: to protect your rights and achieve successful outcomes in every case.</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Learn More</value>
+  </data>
+  <data name="PracticeAreas" xml:space="preserve">
+    <value>Practice Areas</value>
+  </data>
+  <data name="PracticeAreasSubtitle" xml:space="preserve">
+    <value>We offer expert legal counsel across a wide range of practice areas.</value>
+  </data>
+  <data name="CriminalLaw" xml:space="preserve">
+    <value>Criminal Law</value>
+  </data>
+  <data name="CriminalLawDesc" xml:space="preserve">
+    <value>Our criminal defense attorneys will protect your rights in court.</value>
+  </data>
+  <data name="PropertyLaw" xml:space="preserve">
+    <value>Property Law</value>
+  </data>
+  <data name="PropertyLawDesc" xml:space="preserve">
+    <value>Expert guidance on real estate transactions and disputes.</value>
+  </data>
+  <data name="PersonalInjury" xml:space="preserve">
+    <value>Personal Injury</value>
+  </data>
+  <data name="PersonalInjuryDesc" xml:space="preserve">
+    <value>Dedicated representation to secure the compensation you deserve.</value>
+  </data>
+  <data name="CommercialLaw" xml:space="preserve">
+    <value>Commercial Law</value>
+  </data>
+  <data name="CommercialLawDesc" xml:space="preserve">
+    <value>Comprehensive legal solutions for your business needs.</value>
+  </data>
+  <data name="FamilyLaw" xml:space="preserve">
+    <value>Family Law</value>
+  </data>
+  <data name="FamilyLawDesc" xml:space="preserve">
+    <value>Compassionate handling of sensitive family legal matters.</value>
+  </data>
+  <data name="DrugOffence" xml:space="preserve">
+    <value>Drug Offence</value>
+  </data>
+  <data name="DrugOffenceDesc" xml:space="preserve">
+    <value>Strategic defense for drug-related charges and allegations.</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="ContactUsSubtitle" xml:space="preserve">
+    <value>Ready to discuss your legal needs? Get in touch with our team today.</value>
+  </data>
+  <data name="SendUsAMessage" xml:space="preserve">
+    <value>Send us a Message</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name *</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email Address *</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message *</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+  <data name="HeroTitle" xml:space="preserve">
+    <value>Expert Legal Solutions</value>
+  </data>
+  <data name="HeroSubtitle" xml:space="preserve">
+    <value>Your trusted partner in navigating the complexities of the law with integrity, expertise, and unwavering dedication.</value>
+  </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Welcome to Emad Naguib Law Firm</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Professional legal services in various fields.</value>
+  </data>
+  <data name="SwitchLanguage" xml:space="preserve">
+    <value>Switch Language</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="FooterQuickLinks" xml:space="preserve">
+    <value>Quick Links</value>
+  </data>
+  <data name="FooterRights" xml:space="preserve">
+    <value>All rights reserved.</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="TermsOfService" xml:space="preserve">
+    <value>Terms of Service</value>
+  </data>
+  <data name="Disclaimer" xml:space="preserve">
+    <value>Disclaimer</value>
+  </data>
+  <data name="LawFirmName" xml:space="preserve">
+    <value>Emad Naguib Law Firm </value>
+  </data>
+</root>

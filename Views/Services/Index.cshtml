@@ -1,0 +1,24 @@
+@using Law_Firm.Models.ClsDatabase
+@model IEnumerable<ServiceModel>
+
+@{
+    ViewData["Title"] = "Our Services";
+}
+
+<div class="container py-5">
+    <h1 class="display-4 text-center mb-5">Legal Services</h1>
+    <div class="row">
+        @foreach (var service in Model)
+        {
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="@service.IMagURL h1 text-primary"></i>
+                        <h5 class="card-title mt-3">@service.Title</h5>
+                        <p class="card-text">@service.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

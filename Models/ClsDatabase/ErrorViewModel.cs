@@ -1,0 +1,9 @@
+namespace Law_Firm.Models.ClsDatabase
+{
+    public class ErrorViewModel
+    {
+        public string? RequestId { get; set; }
+
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
+}

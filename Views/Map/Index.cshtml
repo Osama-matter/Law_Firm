@@ -1,0 +1,25 @@
+@using Law_Firm.Models.ClsDatabase
+@model IEnumerable<LocationModel>
+
+@{
+    ViewData["Title"] = "Our Offices";
+}
+
+<div class="container py-5">
+    <h1 class="display-4 text-center mb-5">Our Office Locations</h1>
+    <div class="row">
+        @foreach (var location in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@location.Name</h5>
+                        <p class="card-text">@location.Address</p>
+                        <p class="card-text"><a href="tel:@location.Phone">@location.Phone</a></p>
+                        <a href="https://www.google.com/maps?q=@location.Latitude,@location.Longitude" target="_blank" class="btn btn-primary">View on Map</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

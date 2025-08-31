@@ -1,0 +1,13 @@
+/* RTL specific styles */
+body {
+    text-align: right;
+}
+
+.navbar-nav {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.dropdown-menu {
+    text-align: right;
+}

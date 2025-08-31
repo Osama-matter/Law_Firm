@@ -1,0 +1,317 @@
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@using Law_Firm
+
+
+@{
+    var isRtl = CultureInfo.CurrentUICulture.Name.StartsWith("ar");
+    var dir = isRtl ? "rtl" : "ltr";
+}
+
+<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentUICulture.Name" dir="@dir">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @localizer["Emad Naguib Law Firm"]</title>
+    <meta name="description" content="@ViewData["Description"] ?? localizer["MetaDescription"]" />
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS for Law Firm Styling -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @if (isRtl)
+    {
+        <link rel="stylesheet" href="~/css/rtl.css" asp-append-version="true" />
+    }
+
+    <!-- Additional head content -->
+    @await RenderSectionAsync("Head", required: false)
+
+    </head>
+
+<body class="page-loading">
+    <!-- Header / Fixed Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+            <div class="container">
+                <!-- Office Logo and Brand -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="bi bi-building"></i>
+                    @localizer["LawFirmName"]
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links (Dynamic) -->
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <partial name="_LanguageSwitcher" />
+                        </li>
+                        @{
+                            var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
+                            var navigationItems = new List<dynamic>
+                                                {
+                                                    new { Controller = "Home", Action = "Index", Title = localizer["Home"], Icon = "bi-house" },
+                                                    new { Controller = "About", Action = "Index", Title = localizer["AboutUs"], Icon = "bi-info-circle" },
+                                                    new { Controller = "Services", Action = "Index", Title = localizer["Services"], Icon = "bi-briefcase" },
+                                                    new { Controller = "Contact", Action = "Create", Title = localizer["ContactUs"], Icon = "bi-envelope" }
+                                                };
+                        }
+
+                        @foreach (var item in navigationItems)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link @(currentController == item.Controller ? "active" : "")"
+                                   asp-area="" asp-controller="@item.Controller" asp-action="@item.Action"
+                                   data-controller="@item.Controller">
+                                    <i class="bi @item.Icon me-1"></i>
+                                    @item.Title
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+        <main role="main">
+        @RenderBody()
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Office Info -->
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="bi bi-building"></i>
+                        <span>@localizer["LawFirmName"]</span>
+                    </div>
+                    <p class="mb-3">@localizer["FooterSlogan"]</p>
+                    <div class="contact-info">
+                        <p class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            123 Legal Plaza, Suite 500<br>
+                            <span class="ms-4">Downtown City, ST 12345</span>
+                        </p>
+                        <p class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            (555) 123-4567
+                        </p>
+                        <p class="mb-0">
+                            <i class="bi bi-envelope me-2"></i>
+                            info@sterlinglaw.com
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h5 class="mb-3">@localizer["QuickLinks"]</h5>
+                    <ul class="list-unstyled">
+                        @foreach (var item in navigationItems)
+                        {
+                            <li class="mb-2">
+                                <a asp-area="" asp-controller="@item.Controller" asp-action="@item.Action"
+                                   class="text-light text-decoration-none">
+                                    <i class="bi @item.Icon me-2"></i>@item.Title
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <!-- Social Media & Additional Info -->
+                @* <div class="footer-section">
+                    <h5 class="mb-3">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" title="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" title="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" title="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="mt-3">
+                        <p class="mb-1"><strong>Office Hours:</strong></p>
+                        <p class="mb-1">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        <p class="mb-0">Saturday: 9:00 AM - 2:00 PM</p>
+                    </div>
+                </div> *@
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>@localizer["Copyright"]</p>
+                <div class="footer-legal-links">
+                    <a asp-area="" asp-controller="Legal" asp-action="Privacy">@localizer["PrivacyPolicy"]</a>
+                    <a asp-area="" asp-controller="Legal" asp-action="Terms">@localizer["TermsOfService"]</a>
+                    <a asp-area="" asp-controller="Legal" asp-action="Disclaimer">@localizer["Disclaimer"]</a>
+                </div>
+                <p class="mt-2">
+                    <small class="text-muted">
+                        @localizer["AttorneyAdvertising"]
+                    </small>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for internal page sections (Home page)
+            const smoothScrollLinks = document.querySelectorAll('a[href*="#"]:not([href="#"])');
+            smoothScrollLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href').split('#')[1];
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement && window.location.pathname === this.pathname) {
+                        e.preventDefault();
+                        const offsetTop = targetElement.offsetTop - 100; // Account for fixed navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+
+                        // Update URL without triggering scroll
+                        history.replaceState(null, null, this.getAttribute('href'));
+                    }
+                });
+            });
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('mainNavbar');
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+                // Add/remove scrolled class for styling
+                if (currentScroll > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                // Optional: Hide/show navbar on scroll (uncomment if desired)
+                /*
+                if (currentScroll > lastScrollTop && currentScroll > 100) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                */
+
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            });
+
+            // Close mobile menu when clicking on links
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            const navbarCollapse = document.getElementById('navbarMain');
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbarCollapse.classList.contains('show')) {
+                        bsCollapse.hide();
+                    }
+                });
+            });
+
+            // Set active nav item based on current page
+            const currentPath = window.location.pathname.toLowerCase();
+            navLinks.forEach(link => {
+                const linkController = link.getAttribute('data-controller')?.toLowerCase();
+                if (currentPath.includes(linkController) ||
+                    (currentPath === '/' && linkController === 'home')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            // Form validation enhancement (if forms exist)
+            const forms = document.querySelectorAll('form[data-validate="true"]');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    if (!form.checkValidity()) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                });
+            });
+
+            // Loading animation
+            document.body.classList.remove('page-loading');
+
+            // Accessibility: Skip to main content
+            const skipLink = document.createElement('a');
+            skipLink.href = '#main-content';
+            skipLink.textContent = 'Skip to main content';
+            skipLink.className = 'visually-hidden-focusable position-absolute top-0 start-0 z-index-1050 btn btn-primary';
+            skipLink.style.transform = 'translateY(-100%)';
+            skipLink.addEventListener('focus', () => {
+                skipLink.style.transform = 'translateY(0)';
+            });
+            skipLink.addEventListener('blur', () => {
+                skipLink.style.transform = 'translateY(-100%)';
+            });
+            document.body.prepend(skipLink);
+        });
+
+        // Global functions for external use
+        window.LawFirm = {
+            // Function to add new navigation item dynamically
+            addNavItem: function(controller, action, title, icon) {
+                // This would typically be used with AJAX/server-side logic
+                console.log('Adding nav item:', { controller, action, title, icon });
+            },
+
+            // Function to highlight current section (for single-page sections)
+            highlightSection: function(sectionId) {
+                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        };
+    </script>
+
+    <!-- Custom site scripts -->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
