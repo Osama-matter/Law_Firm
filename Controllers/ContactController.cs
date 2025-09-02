@@ -1,6 +1,3 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Law_Firm.Models.ClsDatabase;
-using Law_Firm.Reosertiry.Interface;
 using System.Threading.Tasks;
 
 namespace Law_Firm.Controllers
@@ -47,7 +44,7 @@ namespace Law_Firm.Controllers
                 await _emailService.SendEmailAsync("admin@lawfirm.com", subject, body, model.Email);
 
                 TempData["SuccessMessage"] = "Your message has been sent successfully!";
-                return RedirectToAction("Index");
+                return RedirectToAction("Index" ,"Home");
             }
 
             return View(model);

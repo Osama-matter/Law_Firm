@@ -1,46 +1,60 @@
-﻿@model Law_Firm.ViewMOdel.ServivesViewMOdel
+@using Microsoft.AspNetCore.Mvc.Localization
+@model Law_Firm.ViewMOdel.ServivesViewMOdel
+@inject IHtmlLocalizer<SharedResource> localizer
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = @localizer["CreateService"];
 }
 
-<h1>Create</h1>
-
-<h4>ServivesViewMOdel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IMagURL" class="control-label"></label>
-                <input asp-for="IMagURL" class="form-control" />
-                <span asp-validation-for="IMagURL" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 petrol-blue-text">@localizer["CreateService"]</h1>
+        <p class="lead text-muted">@localizer["AddaNewServiceToList"]</p>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div class="create-service-container">
+        <!-- Form Column -->
+        <div class="form-column">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+                <div class="form-group mb-3">
+                    <label asp-for="Title" class="control-label">@localizer["Title"]</label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label asp-for="Description" class="control-label">@localizer["Description"]</label>
+                    <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="SubDescription" class="control-label">@localizer[" Sub Description"]</label>
+                    <textarea asp-for="SubDescription" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="SubDescription" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label asp-for="IMagURL" class="control-label"></label>
+                    <input asp-for="IMagURL" class="form-control" />
+                    <span asp-validation-for="IMagURL" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="IconImage" class="control-label"></label>
+                    <input asp-for="IconImage" class="form-control" />
+                    <span asp-validation-for="IMagURL" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="@localizer["Create"]" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+
+        <!-- Service List Column -->
+
+    </div>
 </div>
 
 @section Scripts {

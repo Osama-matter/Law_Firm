@@ -12,6 +12,15 @@
 <!DOCTYPE html>
 <html lang="@CultureInfo.CurrentUICulture.Name" dir="@dir">
 <head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyApp</title>
+
+    @RenderSection("Meta", required: false)
+    @RenderSection("Styles", required: false)
+
+    <link rel="stylesheet" href="~/css/site.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - @localizer["Emad Naguib Law Firm"]</title>

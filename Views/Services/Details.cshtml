@@ -1,0 +1,141 @@
+@model Law_Firm.ViewMOdel.ServivesViewMOdel
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details - Law Firm</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <div class="service-detail-container">
+        <!-- Service Title -->
+        <h1 class="service-title">@Model.Title</h1>
+
+        <!-- Main Content -->
+        <div class="service-content">
+            <div class="content-layout">
+                <!-- Service Description -->
+                <div class="service-description">
+                    <p>@Model.Description</p>
+                </div>
+
+                <!-- Service Image -->
+                <div class="service-image-container">
+                    <div class="service-image-placeholder">
+                        <img src="@Url.Content(Model.IMagURL)" alt="@Model.Title" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="https://wa.me/201273201805"
+                   target="_blank"
+                   class="btn-consultation">
+                    <i class="fab fa-whatsapp"></i> Get Consultation
+                </a>
+                <a href="@Url.Action("Index", "Services")" class="btn-services">
+                    <i class="fas fa-list"></i>Show All Services
+                </a>
+            </div>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="additional-info">
+            <h3 class="info-title">
+                <i class="fas fa-star"></i>Why Choose Our Services
+            </h3>
+            <ul class="info-list">
+                <li><i class="fas fa-check-circle"></i>Experienced legal professionals</li>
+                <li><i class="fas fa-clock"></i>Prompt response times</li>
+                <li><i class="fas fa-handshake"></i>Personalized approach</li>
+                <li><i class="fas fa-shield-alt"></i>Comprehensive legal protection</li>
+                <li><i class="fas fa-dollar-sign"></i>Transparent pricing</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Handle consultation button click
+        function handleConsultationClick(button) {
+            // Add loading state
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner"></i>Connecting...';
+            button.classList.add('btn-loading');
+            
+            // Simulate navigation delay for better UX
+            setTimeout(() => {
+                // In a real application, this would navigate to Contact/Create
+                // window.location.href = '/Contact/Create';
+                
+                // For demo purposes, show alert
+                alert('Redirecting to consultation booking page...');
+                
+                // Reset button
+                button.innerHTML = originalHTML;
+                button.classList.remove('btn-loading');
+            }, 1500);
+        }
+
+        // Handle services button click  
+        function handleServicesClick(button) {
+            // Add loading state
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner"></i>Loading...';
+            button.classList.add('btn-loading');
+            
+            // Simulate navigation delay for better UX
+            setTimeout(() => {
+                // In a real application, this would navigate to Services list
+                // window.location.href = '/Services';
+                
+                // For demo purposes, show alert
+                alert('Redirecting to services list page...');
+                
+                // Reset button
+                button.innerHTML = originalHTML;
+                button.classList.remove('btn-loading');
+            }, 1500);
+        }
+
+        // Add smooth scroll for any anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add parallax effect to image container
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const imageContainer = document.querySelector('.service-image-container');
+                if (imageContainer) {
+                    const rate = scrolled * -0.1;
+                    imageContainer.style.transform = `translateY(${rate}px)`;
+                }
+            });
+
+            // Add intersection observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.additional-info').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

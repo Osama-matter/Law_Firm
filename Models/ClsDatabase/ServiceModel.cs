@@ -10,6 +10,13 @@ namespace Law_Firm.Models.ClsDatabase
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string  IMagURL  { get; set; }  
+
+        public string SubDescription { get; set; }
+
+        // Preferred icon field as per requirements
+
+        // Backwards-compatible fields that may exist in older data
+        public string IconImage { get; set; }
+        public string IMagURL { get; set; }
     }
 }

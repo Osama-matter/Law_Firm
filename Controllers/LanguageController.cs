@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Law_Firm.Controllers
 {

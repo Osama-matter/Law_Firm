@@ -1,5 +1,5 @@
 @using Law_Firm.ViewMOdel
-@model ContactViewMOdel
+@model HomeViewModel
 
 @{
     ViewData["Title"] = localizer["Home"];
@@ -93,6 +93,9 @@
     </div>
 </section>
 
+
+</section>
+
 <!-- Contact Section -->
 <section id="contact" class="section-padding section">
     <div class="container">
@@ -104,24 +107,22 @@
             <div class="col-lg-8">
                 <div class="contact-form">
                     <h4 class="mb-4">@localizer["SendUsAMessage"]</h4>
-                    <form asp-action="Index" method="post">
+                    <form asp-controller="Contact" asp-action="Create" method="post">
+                        @Html.AntiForgeryToken()
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="mb-3">
-                            <label asp-for="Name" class="form-label">@localizer["FullName"]</label>
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <label class="form-label" for="contact-name">@localizer["FullName"]</label>
+                            <input id="contact-name" name="Name" class="form-control" required />
                         </div>
                         <div class="mb-3">
-                            <label asp-for="Email" class="form-label">@localizer["EmailAddress"]</label>
-                            <input asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
+                            <label class="form-label" for="contact-email">@localizer["EmailAddress"]</label>
+                            <input id="contact-email" name="Email" type="email" class="form-control" required />
                         </div>
                         <div class="mb-3">
-                            <label asp-for="Message" class="form-label">@localizer["Message"]</label>
-                            <textarea asp-for="Message" class="form-control" rows="5"></textarea>
-                            <span asp-validation-for="Message" class="text-danger"></span>
+                            <label class="form-label" for="contact-message">@localizer["Message"]</label>
+                            <textarea id="contact-message" name="Message" class="form-control" rows="5" required></textarea>
                         </div>
-                        <button type="submit" asp-action="Create" asp-controller="Contact" class="btn btn-primary">@localizer["SendMessage"]</button>
+                        <button type="submit" class="btn btn-primary">@localizer["SendMessage"]</button>
                     </form>
                 </div>
             </div>

@@ -127,7 +127,7 @@
     <value>Welcome to Our Firm</value>
   </data>
   <data name="AboutFirmDescription" xml:space="preserve">
-    <value>Emad Naguib Law Firm is committed to delivering professional and reliable legal services.</value>
+    <value>About Emad Naguib Law Firm </value>
   </data>
   <data name="AboutFirmExpertise" xml:space="preserve">
     <value>With extensive experience in civil, commercial, and criminal law, we provide our clients with guidance rooted in integrity, expertise, and effective strategies. Our mission is simple: to protect your rights and achieve successful outcomes in every case.</value>
@@ -198,38 +198,17 @@
   <data name="Message" xml:space="preserve">
     <value>Message *</value>
   </data>
-  <data name="SendMessage" xml:space="preserve">
-    <value>Send Message</value>
-  </data>
-  <data name="HeroTitle" xml:space="preserve">
-    <value>Expert Legal Solutions</value>
-  </data>
-  <data name="HeroSubtitle" xml:space="preserve">
-    <value>Your trusted partner in navigating the complexities of the law with integrity, expertise, and unwavering dedication.</value>
-  </data>
-  <data name="WelcomeMessage" xml:space="preserve">
-    <value>Welcome to Emad Naguib Law Firm</value>
-  </data>
-  <data name="AboutUs" xml:space="preserve">
-    <value>About Us</value>
-  </data>
-  <data name="ContactUs" xml:space="preserve">
-    <value>Contact Us</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Professional legal services in various fields.</value>
-  </data>
-  <data name="SwitchLanguage" xml:space="preserve">
-    <value>Switch Language</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
-  </data>
   <data name="Services" xml:space="preserve">
     <value>Services</value>
   </data>
+  <data name="NavContact" xml:space="preserve">
+    <value>Contact US</value>
+  </data>
   <data name="FooterQuickLinks" xml:space="preserve">
     <value>Quick Links</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Send Message</value>
   </data>
   <data name="FooterRights" xml:space="preserve">
     <value>All rights reserved.</value>
@@ -244,6 +223,69 @@
     <value>Disclaimer</value>
   </data>
   <data name="LawFirmName" xml:space="preserve">
-    <value>Emad Naguib Law Firm </value>
+    <value>Emad Naguib Law Firm</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>Image URL</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreateService" xml:space="preserve">
+    <value>Create Service</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Return Home Page</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="OurServicesSubtitle" xml:space="preserve">
+    <value>Explore our wide range of legal services.</value>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>View Details</value>
+  </data>
+  <data name="AddaNewServiceToList" xml:space="preserve">
+    <value>Add a new service to the list</value>
+  </data>
+  <data name="ExistingServices" xml:space="preserve">
+    <value>Existing Services</value>
+  </data>
+  <data name="NoServicesFound" xml:space="preserve">
+    <value>No services found.</value>
+  </data>
+  <data name="TestimonialsTitle" xml:space="preserve">
+    <value>What Our Clients Say</value>
+  </data>
+  <data name="TestimonialsSubtitle" xml:space="preserve">
+    <value>Discover why our clients trust us to handle their most critical legal matters.</value>
+  </data>
+  <data name="ServicesIntroDescription" xml:space="preserve">
+    <value>Our firm offers a comprehensive range of legal services designed to meet the diverse needs of our clients. From corporate law to personal legal matters, our team of experts is dedicated to providing strategic advice and effective solutions. We are committed to excellence and work tirelessly to ensure the best possible outcomes for every case we handle.</value>
+  </data>
+  <data name="NoServicesAvailable" xml:space="preserve">
+    <value>No services are currently available. Please check back later.</value>
+  </data>
+  <data name="HeroTitle" xml:space="preserve">
+    <value>Expert Legal Solutions</value>
+  </data>
+  <data name="HeroSubtitle" xml:space="preserve">
+    <value>Your trusted partner in navigating the complexities of the law with integrity, expertise, and unwavering dedication.</value>
+  </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Welcome to Emad Naguib Law Firm</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="SwitchLanguage" xml:space="preserve">
+    <value>Switch Language</value>
   </data>
 </root>
