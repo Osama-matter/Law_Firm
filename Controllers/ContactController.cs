@@ -44,7 +44,7 @@ namespace Law_Firm.Controllers
                 await _emailService.SendEmailAsync("admin@lawfirm.com", subject, body, model.Email);
 
                 TempData["SuccessMessage"] = "Your message has been sent successfully!";
-                return RedirectToAction("Index" ,"Home");
+                return RedirectToAction("Create");
             }
 
             return View(model);

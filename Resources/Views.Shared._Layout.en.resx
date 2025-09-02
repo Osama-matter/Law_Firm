@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Emad Naguib Law Firm" xml:space="preserve"><value>Emad Naguib Law Firm</value></data>
+  <data name="MetaDescription" xml:space="preserve"><value>Professional legal services from our experienced team.</value></data>
+  <data name="LawFirmName" xml:space="preserve"><value>Emad Naguib Law Firm</value></data>
+  <data name="Home" xml:space="preserve"><value>Home</value></data>
+  <data name="AboutUs" xml:space="preserve"><value>About</value></data>
+  <data name="Services" xml:space="preserve"><value>Services</value></data>
+  <data name="ContactUs" xml:space="preserve"><value>Contact</value></data>
+  <data name="QuickLinks" xml:space="preserve"><value>Quick Links</value></data>
+  <data name="Copyright" xml:space="preserve"><value>© @DateTime.Now.Year Emad Naguib Law Firm. All rights reserved.</value></data>
+  <data name="PrivacyPolicy" xml:space="preserve"><value>Privacy Policy</value></data>
+  <data name="TermsOfService" xml:space="preserve"><value>Terms of Service</value></data>
+  <data name="Disclaimer" xml:space="preserve"><value>Disclaimer</value></data>
+  <data name="AttorneyAdvertising" xml:space="preserve"><value>Attorney advertising. Prior results do not guarantee a similar outcome.</value></data>
+</root>

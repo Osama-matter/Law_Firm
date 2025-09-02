@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Emad Naguib Law Firm" xml:space="preserve"><value>مكتب عماد نجيب للمحاماة</value></data>
+  <data name="MetaDescription" xml:space="preserve"><value>خدمات قانونية احترافية يقدمها فريق ذو خبرة.</value></data>
+  <data name="LawFirmName" xml:space="preserve"><value>مكتب عماد نجيب للمحاماة</value></data>
+  <data name="Home" xml:space="preserve"><value>الرئيسية</value></data>
+  <data name="AboutUs" xml:space="preserve"><value>من نحن</value></data>
+  <data name="Services" xml:space="preserve"><value>الخدمات</value></data>
+  <data name="ContactUs" xml:space="preserve"><value>اتصل بنا</value></data>
+  <data name="QuickLinks" xml:space="preserve"><value>روابط سريعة</value></data>
+  <data name="Copyright" xml:space="preserve"><value>© @DateTime.Now.Year مكتب عماد نجيب للمحاماة. جميع الحقوق محفوظة.</value></data>
+  <data name="PrivacyPolicy" xml:space="preserve"><value>سياسة الخصوصية</value></data>
+  <data name="TermsOfService" xml:space="preserve"><value>شروط الخدمة</value></data>
+  <data name="Disclaimer" xml:space="preserve"><value>إخلاء المسؤولية</value></data>
+  <data name="AttorneyAdvertising" xml:space="preserve"><value>هذا إعلان محاماة. النتائج السابقة لا تضمن نفس النتيجة.</value></data>
+</root>

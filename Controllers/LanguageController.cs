@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace Law_Firm.Controllers
 {
@@ -13,7 +14,14 @@ namespace Law_Firm.Controllers
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
 
-            return LocalRedirect(returnUrl);
+            // Ensure QueryString provider sees culture on the redirected URL
+            var withCulture = QueryHelpers.AddQueryString(returnUrl ?? "~/", new Dictionary<string, string?>
+            {
+                ["culture"] = culture,
+                ["ui-culture"] = culture
+            });
+
+            return LocalRedirect(withCulture);
         }
     }
 }

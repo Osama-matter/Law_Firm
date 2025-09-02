@@ -5,16 +5,48 @@
 @inject IOptions<RequestLocalizationOptions> LocOptions
 
 @{
-    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
-    var cultureItems = LocOptions.Value.SupportedUICultures
-        .Select(c => new SelectListItem { Value = c.Name, Text = c.TwoLetterISOLanguageName.ToUpper() })
-        .ToList();
+    var feature = Context.Features.Get<IRequestCultureFeature>();
+    var current = feature?.RequestCulture.UICulture.Name ?? "ar-EG";
+    var cultures = LocOptions.Value.SupportedUICultures?.Select(c => c.Name).ToList() ?? new List<string> { "ar-EG", "en-US" };
     var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path}{Context.Request.QueryString}";
+
+    string CultureLabel(string name) => name switch
+    {
+        "ar-EG" => "العربية",
+        "en-US" => "English",
+        _ => name
+    };
+    string CultureFlag(string name) => name switch
+    {
+        "ar-EG" => "🇪🇬",
+        "en-US" => "🇺🇸",
+        _ => "🏳️"
+    };
 }
 
-<div title="@requestCulture.RequestCulture.UICulture.Name">
-    <form id="selectLanguage" asp-controller="Language" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl" method="post" class="form-horizontal" role="form">
-        <select name="culture" onchange="this.form.submit();" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems" class="form-select form-select-sm">
-        </select>
-    </form>
+<div class="dropdown">
+    <button class="btn btn-outline-light btn-sm rounded-pill dropdown-toggle d-flex align-items-center" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="me-2">@CultureFlag(current)</span>
+        <span class="d-none d-sm-inline">@CultureLabel(current)</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="langDropdown">
+        @foreach (var c in cultures)
+        {
+            var isActive = string.Equals(c, current, StringComparison.OrdinalIgnoreCase);
+            <li>
+                <form asp-controller="Language" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl" method="post" class="px-3 py-1">
+                    <input type="hidden" name="culture" value="@c" />
+                    <button type="submit" class="dropdown-item d-flex align-items-center @(isActive ? "active" : null)">
+                        <span class="me-2">@CultureFlag(c)</span>
+                        <span>@CultureLabel(c)</span>
+                    </button>
+                </form>
+            </li>
+        }
+    </ul>
+    <style>
+        /* Optional subtle dark-mode friendly styles */
+        .dropdown-item.active, .dropdown-item:active { background-color: #0d6efd; color: #fff; }
+        #mainNavbar .btn-outline-light:hover { background: rgba(255,255,255,.15); }
+    </style>
 </div>

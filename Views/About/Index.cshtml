@@ -1,250 +1,596 @@
-@{ var isRtl = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft; }
 <!DOCTYPE html>
-<html lang="en" dir="@(isRtl ? "rtl" : "ltr")">
+<html lang="@(System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName)" dir="@(System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft ? "rtl" : "ltr")">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Star Lee Law Firm</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>About Us - Emad Naguib Law Firm | Modern Legal Excellence</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        .service_banner {
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            background: #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #c9ab63;
+            --accent-color: #e9b949;
+            --text-color: #333;
+            --light-text: #f8f9fa;
+            --dark-bg: #2d3748;
+            --light-bg: #f8f9fa;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 5rem;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
 
-            .service_banner::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 4px;
-            }
-
-        /* Underline accents aligned to site navy palette */
-        .green-after::after,
-        .pink-after::after,
-        .purple-after::after {
-            background: linear-gradient(45deg, #1e3a8a, #1e40af);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .service_banner img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 20px;
-            object-fit: contain;
-        }
-
-        .service_banner h2 {
-            color: #333;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .service_banner p {
-            color: #666;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
         }
 
-        .bg_Consultation {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-            color: #fff;
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
         }
 
-        .c_brown {
-            color: #8b4513;
-        }
-
-        .c_f {
-            color: #f8f9fa;
-        }
-
-        .pt-70 {
-            padding-top: 70px;
-        }
-
-        .py-70 {
-            padding: 70px 0;
-        }
-
-        .mt-50 {
-            margin-top: 50px;
-        }
-
-        .py-40 {
-            padding: 40px 0;
-        }
-
-        .col-4pad {
-            padding: 15px;
-        }
-
-        .bg_tree {
-            background: linear-gradient(45deg, #1e3a8a, #1e40af);
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-            .bg_tree:hover {
-                background: linear-gradient(45deg, #2a4fb3, #2b57c7);
-                color: #fff;
-                transform: translateY(-2px);
-            }
-
-        .bg_gradient_team {
-            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
-            color: #e5e7eb;
-        }
-
-        .Lawyers_one, .Lawyers_to, .Lawyers_tree {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .Lawyers_one {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23667eea" width="400" height="300"/><text x="50%" y="50%" fill="white" font-size="20" text-anchor="middle" dy="0.3em">Free Consultation</text></svg>');
-        }
-
-        .Lawyers_to {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23764ba2" width="400" height="300"/><text x="50%" y="50%" fill="white" font-size="20" text-anchor="middle" dy="0.3em">Legal Information</text></svg>');
-        }
-
-        .Lawyers_tree {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%2328a745" width="400" height="300"/><text x="50%" y="50%" fill="white" font-size="20" text-anchor="middle" dy="0.3em">Proven Results</text></svg>');
-        }
-
-        .ovrllay {
-            position: absolute;
+        /* Navigation */
+        .navbar {
+            position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
+            width: 100%;
+            background: transparent;
+            padding: var(--space-sm) 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+            .navbar.scrolled {
+                background: var(--primary-color);
+                padding: var(--space-xs) 0;
+                box-shadow: var(--box-shadow);
+            }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+            .logo i {
+                margin-right: var(--space-xs);
+                color: var(--secondary-color);
+            }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+            .nav-links li {
+                margin-left: var(--space-lg);
+            }
+
+            .nav-links a {
+                color: var(--light-text);
+                text-decoration: none;
+                font-weight: 500;
+                transition: var(--transition);
+            }
+
+                .nav-links a:hover {
+                    color: var(--secondary-color);
+                }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3') center/cover no-repeat;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0,0,0,0.4);
-            transition: all 0.3s ease;
+            text-align: center;
+            color: var(--light-text);
+            padding: var(--space-2xl) var(--space-md);
+            margin-top: 60px;
         }
 
-            .ovrllay:hover {
-                background: rgba(0,0,0,0.6);
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: var(--space-md);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin: var(--space-2xl) 0;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: var(--space-xl);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
 
-        .inner_text h1 a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.8rem;
-            font-weight: 600;
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-md);
+            color: var(--primary-color);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--primary-color);
+            color: var(--light-text);
+            padding: var(--space-2xl) 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-xl);
             text-align: center;
         }
 
-        .border_img {
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            max-width: 100%;
-            height: auto;
+        .stat-item {
+            opacity: 0;
         }
 
-        .about-bottom-s {
-            line-height: 1.8;
+        .stat-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Experience Grid */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin: var(--space-2xl) 0;
+        }
+
+        .experience-card {
+            border-radius: var(--border-radius);
+            padding: var(--space-xl);
+            color: var(--light-text);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 300px;
+            display: flex;
+            align-items: flex-end;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+            .experience-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .experience-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+                z-index: 1;
+            }
+
+        .consultation-card {
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3') center/cover no-repeat;
+        }
+
+        .information-card {
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3') center/cover no-repeat;
+        }
+
+        .results-card {
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3') center/cover no-repeat;
+        }
+
+        .experience-content {
+            position: relative;
+            z-index: 2;
+        }
+
+            .experience-content h3 {
+                font-size: 1.8rem;
+                margin-bottom: var(--space-md);
+            }
+
+        /* About Section */
+        .about-section {
+            padding: var(--space-2xl) 0;
+            background: var(--light-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-text p {
+            margin-bottom: var(--space-md);
             font-size: 1.1rem;
+            line-height: 1.8;
         }
 
-        .p0 {
-            padding: 0;
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Fix: responsive styles */
+        .about-image-inner {
+            width: 100%;
+            height: 400px;
+            background: var(--primary-color);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 8rem;
+            box-shadow: var(--box-shadow);
+        }
 
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
 
-        /* Basic RTL tweaks */
-        [dir="rtl"] .text-end { text-align: left !important; }
-        [dir="rtl"] .text-start { text-align: right !important; }
-</style>
+            .btn i {
+                margin-right: var(--space-xs);
+            }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--light-text);
+        }
+
+            .btn-primary:hover {
+                background: transparent;
+                border-color: var(--primary-color);
+                color: var(--primary-color);
+            }
+
+        .btn-outline {
+            background: transparent;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+            .btn-outline:hover {
+                background: var(--primary-color);
+                color: var(--light-text);
+            }
+
+        /* Animations */
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+            .slide-in-left.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+            .slide-in-right.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        /* Responsive Design */
+        media (max-width: 992px) {
+            .about-content
+
+        {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+
+        }
+
+        media (max-width: 768px) {
+            .nav-links
+
+        {
+            display: none; /* For simplicity, in a real project you'd add a hamburger menu */
+        }
+
+        .services-grid, .stats-grid, .experience-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .about-image-inner {
+            height: 300px;
+            font-size: 5rem;
+        }
+
+        }</style>
 </head>
-<body dir="@(isRtl ? "rtl" : "ltr")">
-    <div class="container py-5">
-        <h1 class="display-4 text-center mb-4">About Our Law Firm</h1>
 
-        <!-- Services Section -->
-        <div id="about">
-            <div class="container">
-                <div class="row top_service">
-                    <div class="col-md-4 col-sm-6 mb-4">
-                        <div class="service_banner green-after">
-                            <div>
-                                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2328a745'/><text x='50' y='55' fill='white' font-size='14' text-anchor='middle'>Law</text></svg>" alt="Legal Service">
-                            </div>
-                            <h2>Qualified <br>Legal Attorneys</h2>
-                            <p>Our criminal defense attorneys will protect your rights.</p>
-                        </div>
+<body>
+    <!-- Navigation -->
+
+
+    <!-- Services Overview -->
+    <section class="main-container" style="padding: var(--space-2xl) var(--space-md);">
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <h3>Qualified Legal Attorneys</h3>
+                <p>Our experienced legal team will protect your rights with comprehensive knowledge and unwavering dedication to your case.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Over 30 Years of Experience</h3>
+                <p>We have the best skilled attorneys with extensive backgrounds in various legal disciplines and proven track records.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Our Awards and Certificates</h3>
+                <p>Recognition for excellence in legal practice, with numerous awards and certifications that demonstrate our commitment to quality.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="main-container">
+            <div class="stats-grid fade-in">
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Cases Won</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Expert Lawyers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="main-container">
+            <div class="about-content">
+                <div class="about-text slide-in-left">
+                    <h2>Excellence in Legal Practice</h2>
+                    <p>At Emad Naguib Law Firm, we combine decades of legal expertise with modern approaches to deliver exceptional results for our clients. Our commitment to justice and unwavering dedication to client success has established us as a leading legal practice.</p>
+                    <p>We understand that legal challenges can be overwhelming, which is why we provide personalized attention and clear communication throughout every step of your case. Our experienced attorneys work tirelessly to protect your interests and achieve the best possible outcomes.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: var(--space-lg);">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Contact Us Today
+                        </a>
+
                     </div>
-                    <div class="col-md-4 col-sm-6 mb-4">
-                        <div class="service_banner pink-after">
-                            <div>
-                                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23e83e8c'/><text x='50' y='55' fill='white' font-size='12' text-anchor='middle'>30+</text></svg>" alt="Experience">
-                            </div>
-                            <h2>
-                                Over 30 <br>
-                                Years of Experience
-                            </h2>
-                            <p>We have best skilled attorneys with extensive backgrounds.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 mb-4">
-                        <div class="service_banner purple-after">
-                            <div>
-                                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%236f42c1'/><text x='50' y='55' fill='white' font-size='14' text-anchor='middle'>★</text></svg>" alt="Awards">
-                            </div>
-                            <h2>
-                                Our Awards <br>
-                                and Certificates
-                            </h2>
-                            <p>We have best skilled attorneys with extensive backgrounds.</p>
-                        </div>
+                </div>
+                <div class="about-image slide-in-right">
+                    <div class="about-image-inner">
+                        <i class="fas fa-building"></i>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Experienced Lawyers Section -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-                
-     
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-        <!-- About Us Section -->
-        <div class="bg_gradient_team py-70">
-            <div class="container">
-                <div class="row about_row py-40">
-                    <div class="col-md-8 col-sm-6 col-4pad">
-                        <h1>STAR LEE LAW FIRM</h1>
-                        <p class="about-bottom-s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-4pad text-end">
-                        <img src="~/Img/about-main.png" alt="About Us" class="border_img" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
+        // Observe elements with animation classes
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        // Add number counting animation for stats
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const countUp = (element, target) => {
+            const increment = target / 100;
+            let current = 0;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                const suffix = element.textContent.includes('+') ? '+' :
+                              element.textContent.includes('%') ? '%' : '';
+                element.textContent = Math.floor(current) + suffix;
+            }, 20);
+        };
+
+        // Observe stats for counting animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const number = entry.target;
+                    const text = number.textContent;
+                    const target = parseInt(text.replace(/[^\d]/g, ''));
+                    countUp(number, target);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(stat => {
+            statsObserver.observe(stat);
+        });
+
+        // Initialize hero text animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroTitle = document.querySelector('.hero-title');
+            const heroSubtitle = document.querySelector('.hero-subtitle');
+
+            setTimeout(() => {
+                heroTitle.classList.add('visible');
+            }, 300);
+
+            setTimeout(() => {
+                heroSubtitle.classList.add('visible');
+            }, 800);
+        });
+    </script>
 </body>
 </html>

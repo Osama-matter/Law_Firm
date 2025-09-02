@@ -36,13 +36,22 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     var supportedCultures = new[]
     {
-        new CultureInfo("en-US"),
-        new CultureInfo("ar-EG")
+        new CultureInfo("ar-EG"),
+        new CultureInfo("en-US")
     };
 
-    options.DefaultRequestCulture = new RequestCulture("en-US");
+    // Default = ar-EG
+    options.DefaultRequestCulture = new RequestCulture("ar-EG");
     options.SupportedCultures = supportedCultures;
     options.SupportedUICultures = supportedCultures;
+
+    // Providers order: QueryString -> Cookie -> Accept-Language
+    options.RequestCultureProviders = new List<IRequestCultureProvider>
+    {
+        new QueryStringRequestCultureProvider(),
+        new CookieRequestCultureProvider(),
+        new AcceptLanguageHeaderRequestCultureProvider()
+    };
 });
 
 var app = builder.Build();
@@ -57,10 +66,10 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRouting();
-
-// 3. Use request localization middleware
+// 3. Use request localization middleware early
 app.UseRequestLocalization();
+
+app.UseRouting();
 
 app.UseAuthorization();
 

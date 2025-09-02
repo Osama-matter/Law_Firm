@@ -1,12 +1,13 @@
 @using Law_Firm.ViewMOdel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
 @model ContactViewMOdel
 
 @{
-    ViewData["Title"] = "Contact Us";
+    ViewData["Title"] = localizer["ContactUs"];
 }
 
 <div class="container py-5">
-    <h1 class="display-4 text-center mb-4">Contact Us</h1>
+    <h1 class="display-4 text-center mb-4">@localizer["ContactUs"]</h1>
     <div class="row justify-content-center">
         <div class="col-md-8">
             @if (TempData["SuccessMessage"] != null)
@@ -18,20 +19,20 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="mb-3">
                     <label asp-for="Name" class="form-label"></label>
-                    <input asp-for="Name" class="form-control" />
+                    <input asp-for="Name" class="form-control" placeholder="@localizer["NamePlaceholder"]" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
                     <label asp-for="Email" class="form-label"></label>
-                    <input asp-for="Email" class="form-control" />
+                    <input asp-for="Email" class="form-control" placeholder="@localizer["EmailPlaceholder"]" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
                     <label asp-for="Message" class="form-label"></label>
-                    <textarea asp-for="Message" class="form-control" rows="5"></textarea>
+                    <textarea asp-for="Message" class="form-control" rows="5" placeholder="@localizer["MessagePlaceholder"]"></textarea>
                     <span asp-validation-for="Message" class="text-danger"></span>
                 </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" class="btn btn-primary">@localizer["SendMessage"]</button>
             </form>
         </div>
     </div>
