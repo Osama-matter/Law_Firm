@@ -1,39 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyConsult Group - Your Trusted Partner</title>
+    <title>Veritas Law Firm | Justice, Integrity, Excellence</title>
+    <meta name="description" content="Veritas Law Firm offers expert legal services with a commitment to justice and integrity. Contact our experienced attorneys for a consultation.">
+    <meta name="keywords" content="law firm, legal services, attorney, lawyer, justice, corporate law, litigation">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts: Merriweather (Serif) & Roboto (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header class="header">
-        <nav class="navbar">
+    <!-- Header -->
+    <header class="header sticky-top">
+        <nav class="navbar navbar-expand-lg" id="mainNavbar">
             <div class="container">
-                <a href="#" class="logo">MyConsult Group</a>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
-                    <li class="nav-item nav-dropdown">
-                        <a href="#services" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Business Consulting</a></li>
-                            <li><a href="#">Tax Advisory</a></li>
-                            <li><a href="#">Legal Services</a></li>
-                            <li><a href="#">Virtual Offices</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="#clients" class="nav-link">Clients</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
-                </ul>
-                <a href="#contact" class="btn btn-primary cta-header">Get Started</a>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-balance-scale"></i> Veritas Law
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <button class="btn btn-theme-toggle ms-lg-3" id="theme-toggle" title="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -41,153 +50,180 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <h1>Your Trusted Partner in Business, Tax & Legal Consulting</h1>
-                <p>Providing professional solutions tailored to your success</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary">Discover Our Services</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
-                </div>
+        <section id="hero" class="hero-section text-white text-center d-flex align-items-center">
+            <div class="video-background-holder">
+                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="container position-relative" data-aos="fade-up">
+                <h1 class="display-3 hero-title">Justice, Integrity, Excellence</h1>
+                <p class="lead hero-tagline col-lg-8 mx-auto">Your trusted advocates, dedicated to achieving the best possible outcomes with unwavering commitment.</p>
+                <a href="#contact" class="btn btn-primary btn-lg hero-cta">Get a Free Consultation</a>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="services-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Services</h2>
+        <section id="services" class="services-section py-5">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title text-center mb-5">
+                    <h2 class="display-5">Our Practice Areas</h2>
+                    <p class="lead text-muted">We offer a comprehensive range of legal services.</p>
                 </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <i class="fas fa-briefcase"></i>
-                        <h3>Business Consulting</h3>
-                        <p>Strategic guidance to help your business thrive and grow.</p>
+                <div class="row g-4">
+                    <!-- Service Card 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card text-center p-4 h-100">
+                            <div class="service-icon mb-3"><i class="fas fa-briefcase fa-3x"></i></div>
+                            <h3 class="h4">Corporate Law</h3>
+                            <p>Providing expert legal counsel for businesses, from formation to mergers and acquisitions.</p>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        <h3>Tax Advisory</h3>
-                        <p>Expert tax planning and compliance to optimize your finances.</p>
+                    <!-- Service Card 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card text-center p-4 h-100">
+                            <div class="service-icon mb-3"><i class="fas fa-gavel fa-3x"></i></div>
+                            <h3 class="h4">Litigation & Dispute Resolution</h3>
+                            <p>Representing clients in complex civil litigation and alternative dispute resolution.</p>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-gavel"></i>
-                        <h3>Legal Services</h3>
-                        <p>Comprehensive legal support for your corporate needs.</p>
+                    <!-- Service Card 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card text-center p-4 h-100">
+                            <div class="service-icon mb-3"><i class="fas fa-home fa-3x"></i></div>
+                            <h3 class="h4">Real Estate Law</h3>
+                            <p>Handling all aspects of real estate transactions, from residential closings to commercial leases.</p>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-building"></i>
-                        <h3>Virtual Offices</h3>
-                        <p>Flexible and professional office solutions for modern businesses.</p>
-                    </div>
+                    <!-- Add more service cards as needed -->
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="container about-content">
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/500x400" alt="Office Meeting">
+        <!-- About Us Section -->
+        <section id="about" class="about-section py-5">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title text-center mb-5">
+                    <h2 class="display-5">Meet Our Experts</h2>
+                    <p class="lead text-muted">A team of dedicated and experienced legal professionals.</p>
                 </div>
-                <div class="about-text">
-                    <h2>Who We Are</h2>
-                    <p>We are a team of dedicated professionals committed to providing top-tier consulting services. Our client-focused values ensure that we deliver reliable, effective, and tailored solutions to meet your unique business challenges.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> 15+ years of experience</li>
-                        <li><i class="fas fa-check-circle"></i> 500+ satisfied clients</li>
-                        <li><i class="fas fa-check-circle"></i> International presence</li>
-                    </ul>
+                <div class="row g-4">
+                    <!-- Lawyer Profile Card 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="profile-card text-center">
+                            <img src="https://i.pravatar.cc/300?img=12" class="profile-img rounded-circle mb-3" alt="Lawyer Jane Doe">
+                            <h4 class="mb-1">Jane Doe</h4>
+                            <p class="text-muted">Senior Partner, 15 Yrs Exp.</p>
+                        </div>
+                    </div>
+                    <!-- Lawyer Profile Card 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="profile-card text-center">
+                            <img src="https://i.pravatar.cc/300?img=68" class="profile-img rounded-circle mb-3" alt="Lawyer John Smith">
+                            <h4 class="mb-1">John Smith</h4>
+                            <p class="text-muted">Litigation Head, 12 Yrs Exp.</p>
+                        </div>
+                    </div>
+                    <!-- Lawyer Profile Card 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="profile-card text-center">
+                            <img src="https://i.pravatar.cc/300?img=36" class="profile-img rounded-circle mb-3" alt="Lawyer Emily White">
+                            <h4 class="mb-1">Emily White</h4>
+                            <p class="text-muted">Real Estate Specialist, 8 Yrs Exp.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-statement text-center mt-5 p-4 rounded">
+                    <h3 class="h4">Our Mission</h3>
+                    <p class="lead">To provide exceptional legal representation with a client-first approach, upholding the highest standards of integrity and professionalism to achieve success for those we serve.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Special Services / Features Section -->
-        <section class="features-section">
-            <div class="container">
-                 <div class="section-title">
-                    <h2>Key Offerings</h2>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section py-5">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title text-center mb-5">
+                    <h2 class="display-5">Get in Touch</h2>
+                    <p class="lead text-muted">We are here to help. Reach out to us for any legal inquiries.</p>
                 </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Investment Advisory</h3>
-                        <p>Strategic advice to maximize your investment returns.</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form action="#" method="post" class="contact-form p-4 p-md-5">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control" name="phone" placeholder="Your Phone">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="feature-card">
-                        <i class="fas fa-globe"></i>
-                        <h3>Market Entry</h3>
-                        <p>Helping you expand your business into new markets.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Operational Excellence</h3>
-                        <p>Optimizing your processes for efficiency and growth.</p>
+                    <div class="col-lg-6 d-flex align-items-stretch">
+                        <div class="map-container w-100">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.617349605391!2d-74.00834268459413!3d40.71426897933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda23d%3A0x255c9a9415753397!2sNew%20York%20City%20Hall!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Clients / Partners Section -->
-        <section id="clients" class="clients-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Trusted by Leading Businesses</h2>
-                </div>
-                <div class="clients-grid">
-                    <div class="client-logo"><img src="https://via.placeholder.com/150x60/ccc/888?text=Partner1" alt="Client 1"></div>
-                    <div class="client-logo"><img src="https://via.placeholder.com/150x60/ccc/888?text=Partner2" alt="Client 2"></div>
-                    <div class="client-logo"><img src="https://via.placeholder.com/150x60/ccc/888?text=Partner3" alt="Client 3"></div>
-                    <div class="client-logo"><img src="https://via.placeholder.com/150x60/ccc/888?text=Partner4" alt="Client 4"></div>
-                    <div class="client-logo"><img src="https://via.placeholder.com/150x60/ccc/888?text=Partner5" alt="Client 5"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call-to-Action Section -->
-        <section id="contact" class="cta-section">
-            <div class="container">
-                <h2>Ready to Elevate Your Business?</h2>
-                <a href="#" class="btn btn-primary">Contact Our Team</a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>MyConsult Group</h3>
-                    <p>Your trusted partner for business, tax, and legal consulting services.</p>
+    <footer class="footer text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold">Veritas Law</h5>
+                    <p>Upholding justice with integrity and excellence. Our firm is dedicated to providing top-tier legal services and achieving the best outcomes for our clients.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold">Practice Areas</h5>
+                    <p><a href="#services" class="text-white">Corporate Law</a></p>
+                    <p><a href="#services" class="text-white">Litigation</a></p>
+                    <p><a href="#services" class="text-white">Real Estate</a></p>
                 </div>
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Business Rd, Suite 100, New York, NY</p>
-                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                    <p><i class="fas fa-envelope"></i> contact@myconsult.com</p>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold">Quick Links</h5>
+                    <p><a href="#about" class="text-white">About Us</a></p>
+                    <p><a href="#contact" class="text-white">Contact</a></p>
+                    <p><a href="#" class="text-white">Privacy Policy</a></p>
                 </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold">Contact</h5>
+                    <p><i class="fas fa-home me-3"></i> New York, NY 10007, US</p>
+                    <p><i class="fas fa-envelope me-3"></i> info@veritaslaw.com</p>
+                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p>&copy; 2024 Veritas Law Firm. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-end">
+                        <a href="#" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-floating m-1" role="button"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
 </html>
